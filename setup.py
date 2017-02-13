@@ -22,7 +22,7 @@ setup(
         'License :: OSI Approved :: MIT License',
         'Programming Language :: Python :: 3.6'
     ],
-    # entry_points={'console_scripts': [
-    #     'ax25_parse=ax25:main',
-    # ]}
+    entry_points={'console_scripts': [
+        'ax25_parse=ax25.util:parse_main',
+    ]}
 )
