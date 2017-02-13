@@ -1,4 +1,4 @@
-from ax25.ax25 import Frame, StationIdentifier
+from ax25.ax25 import Frame, StationIdentifier, FrameType
 
 
 class TestStationIdentifier:
@@ -24,6 +24,7 @@ class TestParsing:
         assert p.source.callsign == "N7LEM"
         assert p.source.ssid == 0
         assert len(p.path) == 0
+        assert p.frame_type == FrameType.I
 
     def test_repeater(self):
         b = bytes([
@@ -44,3 +45,4 @@ class TestParsing:
         assert hop.station.callsign == "N7OO"
         assert hop.station.ssid == 1
         assert hop.seen is True
+        assert p.frame_type == FrameType.I
