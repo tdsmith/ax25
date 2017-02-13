@@ -1,0 +1,18 @@
+sudo: false
+language: python
+
+branches:
+    only:
+    - master
+    - travis
+    - /^v\d.*/
+
+matrix:
+  include:
+  - python: 3.6
+
+install:
+- python -m pip install tox
+
+script:
+- tox
